@@ -50,6 +50,10 @@ app.use('/api/file', files);
 
 app.set('superSecret',config.secret);
 // catch 404 and forward to error handler
+app.use('*', function(req,res,next){
+  res.sendFile(__dirname+'/public/index.html');
+});
+
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;

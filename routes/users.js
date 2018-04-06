@@ -140,7 +140,7 @@ router.post('/approve', function (req, res, next) {
             return res.json({ 'status': 500, 'message': err.message });
           }
           //req.headers.host
-          var url = req.headers.host+'/user/confirmation/' + user._id + '/' + token.token;
+          var url = 'http://'+req.headers.host+'/user/confirmation/' + user._id + '/' + token.token;
           const mailOptions = {
             from: 'uopfileshare@gmail.com', // sender address
             to: user.email, // list of receivers
@@ -219,7 +219,7 @@ router.post('/register', function (req, res, next) {
     console.log(user);
     user.save(function (err) {
       if (err) return sendError(err, res);
-      response(res, 200, "", "");
+      response(res, 200, "", "SUCCESS");
     });
   });
 });
