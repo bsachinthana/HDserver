@@ -140,10 +140,10 @@ router.post('/approve', function (req, res, next) {
             return res.json({ 'status': 500, 'message': err.message });
           }
           //req.headers.host
-          var url = 'http://localhost:4200/user/confirmation/' + user._id + '/' + token.token;
+          var url = req.headers.host+'/user/confirmation/' + user._id + '/' + token.token;
           const mailOptions = {
             from: 'uopfileshare@gmail.com', // sender address
-            to: 'bsachinthana@gmail.com', // list of receivers
+            to: user.email, // list of receivers
             subject: 'File Share Account Confirmation', // Subject line
             html: '<p>click on the link to activate your account <a href="' + url + '">' + url + '</a></p>'// plain text body
           };
