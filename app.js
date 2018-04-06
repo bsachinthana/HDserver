@@ -16,7 +16,7 @@ var files = require('./routes/files');
 // 'mongodb://localhost:27017/dbfileshare
 // mongodb://sachi:sachi123@ds163918.mlab.com:63918/54fileshare
 
-mongoose.connect('mongodb://localhost:27017/dbfileshare', (err, db) => {
+mongoose.connect('mongodb://sachi:sachi123@ds163918.mlab.com:63918/54fileshare', (err, db) => {
   if (err) return console.log(err);
 });
 global.db = mongoose.connection;
