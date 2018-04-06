@@ -1,0 +1,1031 @@
+[
+  {
+   "subject" : "Computer Science", 
+    "code" : "CS312", 
+    "year" : 3, 
+    "name" : "Human Computer Interaction Design"
+  },
+  { 
+    "subject" : "Computer Science", 
+    "code" : "CS313", 
+    "year" : 3, 
+    "name" : "Digital Image Processing"
+  },
+  {
+    "subject" : "Computer Science", 
+    "code" : "CS314", 
+    "year" : 3, 
+    "name" : "Image Processing practical"
+  },
+  {
+    "subject" : "Computer Science", 
+    "code" : "CS315", 
+    "year" : 3, 
+    "name" : "Design and Analysis of Algorithms"
+  },
+  {
+    "subject" : "Computer Science", 
+    "code" : "CS303", 
+    "year" : 3, 
+    "name" : "Operating Systems Concepts"
+  },
+  {
+   "subject" : "Computer Science", 
+    "code" : "CS304", 
+    "year" : 3, 
+    "name" : "Project in Computer Science 1" 
+  },
+  {
+    "subject" : "Computer Science", 
+    "code" : "CS305", 
+    "year" : 3, 
+    "name" : "Communication Networks"
+  },
+  {
+    "subject" : "Computer Science", 
+    "code" : "CS306", 
+    "year" : 3, 
+    "name" : "Compiler Construction"
+  },
+  {
+    "subject" : "Computer Science", 
+    "code" : "CS307", 
+    "year" : 3, 
+    "name" : "Computer Graphics"
+  },
+  {
+    "subject" : "Computer Science", 
+    "code" : "CS308", 
+    "year" : 3, 
+    "name" : "Computer Graphics Programming"
+  },
+  {
+    "subject" : "Computer Science", 
+    "code" : "CS309", 
+    "year" : 3, 
+    "name" : "Object Oriented Analysis and Design"
+  },
+  {
+    "subject" : "Computer Science", 
+    "code" : "CS310", 
+    "year" : 3, 
+    "name" : "Server Side Web Programming"
+  },
+  {
+    "subject" : "Computer Science", 
+    "code" : "CS311", 
+    "year" : 3, 
+    "name" : "Software Engineering"
+  },
+  {
+    "subject" : "Computer Science", 
+    "code" : "BC301", 
+    "year" : 3, 
+    "name" : "Basic Computing II"
+  },
+  {
+    "subject" : "Computer Science", 
+    "code" : "BC302", 
+    "year" : 3, 
+    "name" : "Micro Computer Applications II"
+  },
+  {
+     "subject" : "Computer Science", 
+    "code" : "HR301", 
+    "year" : 3, 
+    "name" : "Human Resource Management"
+  },
+  {
+     "subject" : "Botany", 
+    "code" : "BT301", 
+    "year" : 3, 
+    "name" : "Analytical Methods"
+  },
+  {
+    "subject" : "Botany", 
+    "code" : "BT302", 
+    "year" : 3, 
+    "name" : "Advanced Microbiology"
+  },
+  {
+    "subject" : "Botany", 
+    "code" : "BT303", 
+    "year" : 3, 
+    "name" : "Soil Fertility and Management"
+  },
+  {
+    "subject" : "Botany", 
+    "code" : "BT308", 
+    "year" : 3, 
+    "name" : "Plant Systematics"
+  },
+  {
+    "subject" : "Botany", 
+    "code" : "BT309", 
+    "year" : 3, 
+    "name" : "Biodiversity Conservation and Management"
+  },
+  {
+    "subject" : "Botany", 
+    "code" : "BT310", 
+    "year" : 3, 
+    "name" : "Ecosystems of Sri Lanka: Ecology and Conservation"
+  },
+  {
+    "subject" : "Botany", 
+    "code" : "BT311", 
+    "year" : 3, 
+    "name" : "Plant Reproductive Biology and Plant Breeding"
+  },
+  {
+    "subject" : "Molecular Biology and Biotechnology", 
+    "code" : "MB306", 
+    "year" : 3, 
+    "name" : "Recombinant DNA Technology"
+  },
+  {
+    "subject" : "Molecular Biology and Biotechnology", 
+    "code" : "MB311", 
+    "year" : 3, 
+    "name" : "Molecular Cell Biology"
+  },
+  {
+    "subject" : "Molecular Biology and Biotechnology", 
+    "code" : "MB322", 
+    "year" : 3, 
+    "name" : "Molecular Biotechnology"
+  },
+  {
+    "subject" : "Molecular Biology and Biotechnology", 
+    "code" : "MB326", 
+    "year" : 3, 
+    "name" : "Bioinformatics"
+  },
+  {
+    "subject" : "Molecular Biology and Biotechnology", 
+    "code" : "MB333", 
+    "year" : 3, 
+    "name" : "Molecular Phylogenetics"
+  },
+  {
+    "subject" : "Zoology", 
+    "code" : "ZL301", 
+    "year" : 3, 
+    "name" : "Functional Histology"
+  },
+  {
+    "subject" : "Zoology", 
+    "code" : "ZL302", 
+    "year" : 3, 
+    "name" : "Comparative Anatomy and Animal Physiology"
+  },
+  {
+    "subject" : "Zoology", 
+    "code" : "ZL303", 
+    "year" : 3, 
+    "name" : "General Entomology"
+  },
+  {
+    "subject" : "Zoology", 
+    "code" : "ZL304", 
+    "year" : 3, 
+    "name" : "Biology of Parasites"
+  },
+  {
+    "subject" : "Zoology", 
+    "code" : "ZL307", 
+    "year" : 3, 
+    "name" : "Fish Biology"
+  },
+  {
+    "subject" : "Zoology", 
+    "code" : "ZL314", 
+    "year" : 3, 
+    "name" : "Evolutionary Biology and Systematics"
+  },
+  {
+    "subject" : "Zoology", 
+    "code" : "ZL318", 
+    "year" : 3, 
+    "name" : "Amphibian and Reptilian Biology"
+  },
+  {
+    "subject" : "Zoology", 
+    "code" : "ZL329", 
+    "year" : 3, 
+    "name" : "Avian and Mammalian Biology"
+  },
+  {
+    "subject" : "Botany", 
+    "code" : "BT304", 
+    "year" : 3, 
+    "name" : "Plant Pathology"
+  },
+  {
+    "subject" : "Botany", 
+    "code" : "BT305", 
+    "year" : 3, 
+    "name" : "Developmental Physiology and Postharvest Technology"
+  },
+  {
+    "subject" : "Botany", 
+    "code" : "BT307", 
+    "year" : 3, 
+    "name" : "General and Molecular Genetics"
+  },
+  {
+    "subject" : "Botany", 
+    "code" : "BT312", 
+    "year" : 3, 
+    "name" : "Economic Botany"
+  },
+  {
+    "subject" : "Botany", 
+    "code" : "BT313", 
+    "year" : 3, 
+    "name" : "Independent Study"
+  },
+  {
+    "subject" : "Botany", 
+    "code" : "FS302", 
+    "year" : 3, 
+    "name" : "Food Science II"
+  },
+  {
+    "subject" : "Chemistry", 
+    "code" : "CH316", 
+    "year" : 3, 
+    "name" : "Special Topics in Inorganic Chemistry"
+  },
+  {
+    "subject" : "Chemistry", 
+    "code" : "CH317", 
+    "year" : 3, 
+    "name" : "Advanced Inorganic Chemistry"
+  },
+  {
+    "subject" : "Chemistry", 
+    "code" : "CH319", 
+    "year" : 3, 
+    "name" : "Advanced Inorganic Chemistry Laboratory"
+  },
+  {
+    "subject" : "Chemistry", 
+    "code" : "CH321", 
+    "year" : 3, 
+    "name" : "Chemistry of Biomolecules"
+  },
+  {
+    "subject" : "Chemistry", 
+    "code" : "CH324", 
+    "year" : 3, 
+    "name" : "Organic Chemistry II"
+  },
+  {
+    "subject" : "Chemistry", 
+    "code" : "CH326", 
+    "year" : 3, 
+    "name" : "Advanced Organic Chemistry I"
+  },
+  {
+    "subject" : "Chemistry", 
+    "code" : "CH328", 
+    "year" : 3, 
+    "name" : "Organic Chemistry Laboratory II"
+  },
+  {
+    "subject" : "Chemistry", 
+    "code" : "CH329", 
+    "year" : 3, 
+    "name" : "Advanced Organic Chemistry Laboratory"
+  },
+  {
+    "subject" : "Chemistry", 
+    "code" : "CH330", 
+    "year" : 3, 
+    "name" : "Advanced Physical Chemistry I"
+  },
+  {
+    "subject" : "Chemistry", 
+    "code" : "CH330", 
+    "year" : 3, 
+    "name" : "Advanced Physical Chemistry I"
+  },
+  {
+    "subject" : "Chemistry", 
+    "code" : "CH331", 
+    "year" : 3, 
+    "name" : "Physical Chemistry II"
+  },
+  {
+    "subject" : "Chemistry", 
+    "code" : "CH332", 
+    "year" : 3, 
+    "name" : "Physical Chemistry III"
+  },
+  {
+    "subject" : "Chemistry", 
+    "code" : "CH338", 
+    "year" : 3, 
+    "name" : "Physical Chemistry Laboratory II"
+  },
+  {
+    "subject" : "Chemistry", 
+    "code" : "CH339", 
+    "year" : 3, 
+    "name" : "Advanced Physical Chemistry Laboratory II"
+  },
+  {
+    "subject" : "Chemistry", 
+    "code" : "CH341", 
+    "year" : 3, 
+    "name" : "Analytical Chemistry"
+  },
+  {
+    "subject" : "Chemistry", 
+    "code" : "CH342", 
+    "year" : 3, 
+    "name" : "Computer Applications and Instrumentation"
+  },
+  {
+    "subject" : "Chemistry", 
+    "code" : "CH348", 
+    "year" : 3, 
+    "name" : "Analytical and Inorganic Chemistry Laboratory"
+  },
+  {
+    "subject" : "Chemistry", 
+    "code" : "CH351", 
+    "year" : 3, 
+    "name" : "Biological Chemistry I"
+  },
+  {
+    "subject" : "Chemistry", 
+    "code" : "CH361", 
+    "year" : 3, 
+    "name" : "Environmental Chemistry"
+  },
+  {
+    "subject" : "Chemistry", 
+    "code" : "CH369", 
+    "year" : 3, 
+    "name" : "Industrial Training"
+  },
+  {
+    "subject" : "Chemistry", 
+    "code" : "CH371", 
+    "year" : 3, 
+    "name" : "Industrial Chemistry"
+  },
+  {
+    "subject" : "Chemistry", 
+    "code" : "CH351", 
+    "year" : 3, 
+    "name" : "Biological Chemistry I"
+  },
+  {
+    "subject" : "Chemistry", 
+    "code" : "MB331", 
+    "year" : 3, 
+    "name" : "Fermentation Technology"
+  },
+  {
+    "subject" : "Environmental Science", 
+    "code" : "ES301", 
+    "year" : 3, 
+    "name" : "Concepts in Environmental"
+  },
+  {
+    "subject" : "Environmental Science", 
+    "code" : "ES302", 
+    "year" : 3, 
+    "name" : "Biological Indicators in Environmental Management"
+  },
+  {
+    "subject" : "Environmental Science", 
+    "code" : "ES303", 
+    "year" : 3, 
+    "name" : "Water and Soil Pollution"
+  },
+  {
+    "subject" : "Environmental Science", 
+    "code" : "ES304", 
+    "year" : 3, 
+    "name" : "Environmental Law and EIA"
+  },
+  {
+    "subject" : "Environmental Science", 
+    "code" : "ES305", 
+    "year" : 3, 
+    "name" : "Remote sensing and GIS"
+  },
+  {
+    "subject" : "Environmental Science", 
+    "code" : "ES306", 
+    "year" : 3, 
+    "name" : "Ecosystems of Sri Lanka: Their Ecology and Conservation"
+  },
+  {
+    "subject" : "Environmental Science", 
+    "code" : "ES307", 
+    "year" : 3, 
+    "name" : "Wetlands and Their Exploitation"
+  },
+  {
+    "subject" : "Environmental Science", 
+    "code" : "ES308", 
+    "year" : 3, 
+    "name" : "Marine Resources and Marine Pollution"
+  },
+  {
+    "subject" : "Environmental Science", 
+    "code" : "ES309", 
+    "year" : 3, 
+    "name" : "Analytical Chemistry"
+  },
+  {
+    "subject" : "Environmental Science", 
+    "code" : "ES310", 
+    "year" : 3, 
+    "name" : "Hydrology"
+  },
+  {
+    "subject" : "Environmental Science", 
+    "code" : "ES311", 
+    "year" : 3, 
+    "name" : "Mining and The Environment"
+  },
+  {
+    "subject" : "Environmental Science", 
+    "code" : "ES312", 
+    "year" : 3, 
+    "name" : "Biodiversity, Conservation and Management"
+  },
+  {
+    "subject" : "Environmental Science", 
+    "code" : "ES313", 
+    "year" : 3, 
+    "name" : "Energy, Weather and Environment"
+  },
+  {
+    "subject" : "Environmental Science", 
+    "code" : "ES314", 
+    "year" : 3, 
+    "name" : "Geological Environment and Earth Resources"
+  },
+  {
+    "subject" : "Environmental Science", 
+    "code" : "ES315", 
+    "year" : 3, 
+    "name" : "Advanced Microbiology"
+  },
+  {
+    "subject" : "Environmental Science", 
+    "code" : "ES316", 
+    "year" : 3, 
+    "name" : "Mathematics For Environmental"
+  },
+  {
+    "subject" : "Geology", 
+    "code" : "GL301", 
+    "year" : 3, 
+    "name" : "Introduction, Structural Geology and Tectonics"
+  },
+  {
+    "subject" : "Geology", 
+    "code" : "GL302", 
+    "year" : 3, 
+    "name" : "Photogeology"
+  },
+  {
+    "subject" : "Geology", 
+    "code" : "GL303", 
+    "year" : 3, 
+    "name" : "Geomorphology"
+  },
+  {
+    "subject" : "Geology", 
+    "code" : "GL304", 
+    "year" : 3, 
+    "name" : "Geophysics"
+  },
+  {
+    "subject" : "Geology", 
+    "code" : "GL306", 
+    "year" : 3, 
+    "name" : "Environmental Geology"
+  },
+  {
+    "subject" : "Geology", 
+    "code" : "GL307", 
+    "year" : 3, 
+    "name" : "Engineering Geology"
+  },
+  {
+    "subject" : "Geology", 
+    "code" : "GL308", 
+    "year" : 3, 
+    "name" : "Introductory Hydrogeology"
+  },
+  {
+    "subject" : "Geology", 
+    "code" : "GL309", 
+    "year" : 3, 
+    "name" : "Hydrology"
+  },
+  {
+    "subject" : "Geology", 
+    "code" : "GL310", 
+    "year" : 3, 
+    "name" : "Geology of Sri Lanka"
+  },
+  {
+    "subject" : "Geology", 
+    "code" : "GL311", 
+    "year" : 3, 
+    "name" : "Geological Data Analysis"
+  },
+  {
+    "subject" : "Geology", 
+    "code" : "GL312", 
+    "year" : 3, 
+    "name" : "Metamorphic Petrology"
+  },
+  {
+    "subject" : "Geology", 
+    "code" : "GL313", 
+    "year" : 3, 
+    "name" : "Applied Analytical Techniques in Geology"
+  },
+  {
+    "subject" : "Geology", 
+    "code" : "GL314", 
+    "year" : 3, 
+    "name" : "Igneous Petrology"
+  },
+  {
+    "subject" : "Geology", 
+    "code" : "GL315", 
+    "year" : 3, 
+    "name" : "Advanced Economic Geology"
+  },
+  {
+    "subject" : "Geology", 
+    "code" : "GL316", 
+    "year" : 3, 
+    "name" : "Remote Sensing and GIS"
+  },
+  {
+    "subject" : "Geology", 
+    "code" : "GL317", 
+    "year" : 3, 
+    "name" : "Sedimentology"
+  },
+  {
+    "subject" : "Geology", 
+    "code" : "GL318", 
+    "year" : 3, 
+    "name" : "Advanced Field Geology"
+  },
+  {
+    "subject" : "Mathematics", 
+    "code" : "MT301", 
+    "year" : 3, 
+    "name" : "Linear Algebra"
+  },
+  {
+    "subject" : "Mathematics", 
+    "code" : "MT302", 
+    "year" : 3, 
+    "name" : "Real Analysis III"
+  },
+  {
+    "subject" : "Mathematics", 
+    "code" : "MT303", 
+    "year" : 3, 
+    "name" : "Differential Geometry"
+  },
+  {
+    "subject" : "Mathematics", 
+    "code" : "MT304", 
+    "year" : 3, 
+    "name" : "Partial Differential Equations"
+  },
+  {
+    "subject" : "Mathematics", 
+    "code" : "MT305", 
+    "year" : 3, 
+    "name" : "Group Theory"
+  },
+  {
+    "subject" : "Mathematics", 
+    "code" : "MT306", 
+    "year" : 3, 
+    "name" : "Topology I"
+  },
+  {
+    "subject" : "Mathematics", 
+    "code" : "MT307", 
+    "year" : 3, 
+    "name" : "Complex Analysis I"
+  },
+  {
+    "subject" : "Mathematics", 
+    "code" : "MT308", 
+    "year" : 3, 
+    "name" : "Combinatorics"
+  },
+  {
+    "subject" : "Mathematics", 
+    "code" : "MT309", 
+    "year" : 3, 
+    "name" : "Number Theory"
+  },
+  {
+    "subject" : "Mathematics", 
+    "code" : "MT310", 
+    "year" : 3, 
+    "name" : "Fluid Mechanics I"
+  },
+  {
+    "subject" : "Mathematics", 
+    "code" : "MT311", 
+    "year" : 3, 
+    "name" : "Linear Programming"
+  },
+  {
+    "subject" : "Mathematics", 
+    "code" : "MT312", 
+    "year" : 3, 
+    "name" : "Numerical Analysis II"
+  },
+  {
+    "subject" : "Molecular Biology and Biotechnology", 
+    "code" : "MB311", 
+    "year" : 3, 
+    "name" : "Molecular Cell Biology"
+  },
+  {
+    "subject" : "Molecular Biology and Biotechnology", 
+    "code" : "MB301", 
+    "year" : 3, 
+    "name" : "Biochemistry and Molecular Biology Laboratory"
+  },
+  {
+    "subject" : "Molecular Biology and Biotechnology", 
+    "code" : "MB316", 
+    "year" : 3, 
+    "name" : "Molecular Immunology"
+  },
+  {
+    "subject" : "Molecular Biology and Biotechnology", 
+    "code" : "MB331", 
+    "year" : 3, 
+    "name" : "Fermentation Technology"
+  },
+  {
+    "subject" : "Molecular Biology and Biotechnology", 
+    "code" : "MB335", 
+    "year" : 3, 
+    "name" : "Molecular Virology"
+  },
+  {
+    "subject" : "Molecular Biology and Biotechnology", 
+    "code" : "MB337", 
+    "year" : 3, 
+    "name" : "DNA and Forensic Medicine Laboratory"
+  },
+  {
+    "subject" : "Physics", 
+    "code" : "PH304", 
+    "year" : 3, 
+    "name" : "Relativity"
+  },
+  {
+    "subject" : "Physics", 
+    "code" : "PH313", 
+    "year" : 3, 
+    "name" : "Physical Optics and Optical Instruments"
+  },
+  {
+    "subject" : "Physics", 
+    "code" : "PH323", 
+    "year" : 3, 
+    "name" : "EM waves and Communication"
+  },
+  {
+    "subject" : "Physics", 
+    "code" : "PH333", 
+    "year" : 3, 
+    "name" : "Introductory Nuclear Physics"
+  },
+  {
+    "subject" : "Physics", 
+    "code" : "PH341", 
+    "year" : 3, 
+    "name" : "Semiconductor Physics and Devices"
+  },
+  {
+    "subject" : "Physics", 
+    "code" : "PH345", 
+    "year" : 3, 
+    "name" : "Electronics Theory II"
+  },
+  {
+    "subject" : "Physics", 
+    "code" : "PH350", 
+    "year" : 3, 
+    "name" : "Microstructure and Properties of Materials"
+  },
+  {
+    "subject" : "Physics", 
+    "code" : "PH361", 
+    "year" : 3, 
+    "name" : "Biophysics"
+  },
+  {
+    "subject" : "Physics", 
+    "code" : "PH363", 
+    "year" : 3, 
+    "name" : "Astrophysics"
+  },
+  {
+    "subject" : "Physics", 
+    "code" : "PH365", 
+    "year" : 3, 
+    "name" : "Modern Particle Physics"
+  },
+  {
+    "subject" : "Physics", 
+    "code" : "PH366", 
+    "year" : 3, 
+    "name" : "Physics of Atmosphere, Weather and Climate"
+  },
+  {
+    "subject" : "Physics", 
+    "code" : "PH370", 
+    "year" : 3, 
+    "name" : "Mathematical Methods in Physics"
+  },
+  {
+    "subject" : "Physics", 
+    "code" : "PH373", 
+    "year" : 3, 
+    "name" : "Computational Physics"
+  },
+  {
+    "subject" : "Physics", 
+    "code" : "PH374", 
+    "year" : 3, 
+    "name" : "Experimental Techniques and Material Characterization"
+  },
+  {
+    "subject" : "Physics", 
+    "code" : "PH375", 
+    "year" : 3, 
+    "name" : "Nanoscience"
+  },
+  {
+    "subject" : "Physics", 
+    "code" : "PH380", 
+    "year" : 3, 
+    "name" : "General Physics Laboratory III"
+  },
+  {
+    "subject" : "Physics", 
+    "code" : "PH381", 
+    "year" : 3, 
+    "name" : "General Physics Laboratory IV "
+  },
+  {
+    "subject" : "Physics", 
+    "code" : "PH383", 
+    "year" : 3, 
+    "name" : "Advanced Physics Laboratory I"
+  },
+  {
+    "subject" : "Physics", 
+    "code" : "PH384", 
+    "year" : 3, 
+    "name" : "Advanced Physics Laboratory II"
+  },
+  {
+    "subject" : "Physics", 
+    "code" : "PH385", 
+    "year" : 3, 
+    "name" : "Electronics Laboratory II"
+  },
+  {
+    "subject" : "Physics", 
+    "code" : "PH392", 
+    "year" : 3, 
+    "name" : "Seminar"
+  },
+  {
+    "subject" : "Physics", 
+    "code" : "PH395", 
+    "year" : 3, 
+    "name" : "Industrial Training"
+  },
+  {
+    "subject" : "Statistics", 
+    "code" : "ST301", 
+    "year" : 3, 
+    "name" : "Regression Analysis"
+  },
+  {
+    "subject" : "Statistics", 
+    "code" : "ST302", 
+    "year" : 3, 
+    "name" : "Statistical Quality Control"
+  },
+  {
+    "subject" : "Statistics", 
+    "code" : "ST303", 
+    "year" : 3, 
+    "name" : "Design and Analysis of Experiments"
+  },
+  {
+    "subject" : "Statistics", 
+    "code" : "ST305", 
+    "year" : 3, 
+    "name" : "Multivariative Methods I"
+  },
+  {
+    "subject" : "Statistics", 
+    "code" : "ST306", 
+    "year" : 3, 
+    "name" : "Data Analysis and Preparation of Reports"
+  },
+  {
+    "subject" : "Statistics", 
+    "code" : "ST307", 
+    "year" : 3, 
+    "name" : "Time Series Analysis"
+  },
+  {
+    "subject" : "Statistics", 
+    "code" : "ST308", 
+    "year" : 3, 
+    "name" : "Bayesian Statistics I"
+  },
+  {
+    "subject" : "Statistics", 
+    "code" : "ST309", 
+    "year" : 3, 
+    "name" : "Non-parametrics & Categorical Data Analysis"
+  },
+  {
+    "subject" : "Statistics", 
+    "code" : "ST325", 
+    "year" : 3, 
+    "name" : "Seminar"
+  },
+  {
+    "subject" : "Statistics and Operation Research", 
+    "code" : "MT315", 
+    "year" : 3, 
+    "name" : "Operations Research III"
+  },
+  {
+    "subject" : "Zoology", 
+    "code" : "ZL322", 
+    "year" : 3, 
+    "name" : "Insect Pest Management"
+  },
+  {
+    "subject" : "Zoology", 
+    "code" : "ZL323", 
+    "year" : 3, 
+    "name" : "Insect Pest Management"
+  },
+  {
+    "subject" : "Zoology", 
+    "code" : "ZL324", 
+    "year" : 3, 
+    "name" : "Inland Fisheries and Aquaculture"
+  },
+  {
+    "subject" : "Zoology", 
+    "code" : "ZL326", 
+    "year" : 3, 
+    "name" : "Animal Behaviour"
+  },
+  {
+    "subject" : "Zoology", 
+    "code" : "ZL327", 
+    "year" : 3, 
+    "name" : "Animal Genetics and Molecular Biological Techniques"
+  },
+  {
+    "subject" : "Zoology", 
+    "code" : "ZL328", 
+    "year" : 3, 
+    "name" : "Herpetology"
+  },
+  {
+    "subject" : "Zoology", 
+    "code" : "ZL330", 
+    "year" : 3, 
+    "name" : "Ecotourism and Nature Conservation"
+  },
+  {
+    "subject" : "Zoology", 
+    "code" : "ZL331", 
+    "year" : 3, 
+    "name" : "Limnology and Wetland Ecology"
+  },
+  {
+    "subject" : "Zoology", 
+    "code" : "ZL332", 
+    "year" : 3, 
+    "name" : "Quantitative Ecology"
+  },
+  {
+    "subject" : "Science Education", 
+    "code" : "SE301", 
+    "year" : 3, 
+    "name" : "Methodology in Teaching Science"
+  },
+  {
+    "subject" : "Science Education", 
+    "code" : "SE302", 
+    "year" : 3, 
+    "name" : "Teaching Practice"
+  },
+  {
+    "subject" : "Science Education", 
+    "code" : "SE303", 
+    "year" : 3, 
+    "name" : "Assessing Students in The Learning Process"
+  },
+  {
+    "subject" : "Science Education", 
+    "code" : "SE310", 
+    "year" : 3, 
+    "name" : "Introduction to Scientific Writing"
+  },
+  {
+    "subject" : "Computation and Management", 
+    "code" : "MT321", 
+    "year" : 3, 
+    "name" : "Mathematics for Management Studies II"
+  },
+  {
+    "subject" : "Computation and Management", 
+    "code" : "ECN304", 
+    "year" : 3, 
+    "name" : "Econometrics I"
+  },
+  {
+    "subject" : "Computation and Management", 
+    "code" : "MGT301", 
+    "year" : 3, 
+    "name" : "Marketing"
+  },
+  {
+    "subject" : "Computation and Management", 
+    "code" : "MGT304", 
+    "year" : 3, 
+    "name" : "Entrepreunership"
+  },
+  {
+    "subject" : "Computation and Management", 
+    "code" : "MGT305", 
+    "year" : 3, 
+    "name" : "Cost & Management Accounting"
+  },
+  {
+    "subject" : "Computation and Management", 
+    "code" : "MGT307", 
+    "year" : 3, 
+    "name" : "Business Law"
+  },
+  {
+    "subject" : "Statistics and Operation Research", 
+    "code" : "MT313", 
+    "year" : 3, 
+    "name" : "Convex Analysis"
+  },
+  {
+    "subject" : "Statistics and Operation Research", 
+    "code" : "MT314", 
+    "year" : 3, 
+    "name" : "Network Optimization Theory"
+  },
+  {
+    "subject" : "Statistics and Operation Research", 
+    "code" : "MT316", 
+    "year" : 3, 
+    "name" : "Non Linear Progamming"
+  }
+]
+
+
+
+
+
+
+
+
+
