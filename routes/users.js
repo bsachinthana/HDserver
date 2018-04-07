@@ -39,12 +39,13 @@ var storage = multer.diskStorage({
   filename: function (req, file, cb) {
     var o = file.originalname;
     let ext = o.substring(o.lastIndexOf('.'), o.length);
+    console.log(req.body);
     var fileName = (namify(req.body.sno, { replacement: '_' }) + ext)
     cb(null, fileName);
   }
 });
 
-var upload = multer({ storage: storage }).single('identityCard');
+var upload = multer({ storage: storage }).single('image');
 
 const sendError = (err, res) => {
   response.status = 501;
@@ -199,14 +200,7 @@ router.post('/confirmation', function (req, res, next) {
 
 });
 //new user
-router.post('/register', function (req, res, next) {
-
-  upload(req, res, function (err) {
-    if (err) {
-      // An error occurred when uploading
-      return res.send(err);
-    }
-
+router.post('/register', upload,function (req, res, next) {
     var u = {};
     u.name = req.body.name;
     u.card = req.body.card;
@@ -221,7 +215,6 @@ router.post('/register', function (req, res, next) {
       if (err) return sendError(err, res);
       response(res, 200, "", "SUCCESS");
     });
-  });
 });
 //login
 
