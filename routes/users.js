@@ -83,7 +83,8 @@ router.post('/login', function (req, res, next) {
       // we don't want to pass in the entire user since that has the password
       const payload = {
         name: profile.name,
-        sno: profile.sno
+        sno: profile.sno,
+        accType: profile.accType
       };
       var token = jwt.sign(payload, config.secret, {
         expiresIn: '1d' // expires in 24 hours
@@ -231,5 +232,26 @@ router.get('/id', function (req, res, next) {
   var f = req.query.fn;
   var x = path.resolve('./ids/' + f)
   res.sendFile(x);
+});
+
+router.get('/validate',function (req, res, next) {
+  var token = req.headers.authorization;
+
+  // decode token
+  if (token) {
+    // verifies secret and checks exp
+    jwt.verify(token, config.secret, function (err, decoded) {
+      if (err) {
+        return res.json({ message: 'INVALID_TOKEN' });
+      } else {
+        return res.json({ message: decoded.accType});
+      }
+    });
+
+  } else {
+    // if there is no token
+    // return an error
+    return res.json({ status: 500, message: 'NO_TOKEN' });
+  }
 });
 module.exports = router;

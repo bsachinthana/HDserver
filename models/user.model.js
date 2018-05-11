@@ -16,6 +16,7 @@ var userSchema = new Schema({
   createdAt: Date,
   status: String,
   idFileName:String,
+  accType:{type:String, default:"user"},
   uploads:[mongoose.Schema.Types.ObjectId]
 });
 
