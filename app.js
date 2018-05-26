@@ -34,34 +34,34 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   //set headers to allow cross origin request.
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Credentials", "true");
   res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
   res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, Authorization");
   next();
-  });
+});
 
 app.use('/api/upload', index);
 app.use('/api/user', users);
 app.use('/api/util', utils);
 app.use('/api/file', files);
 
-app.set('superSecret',config.secret);
+app.set('superSecret', config.secret);
 // catch 404 and forward to error handler
-app.use('*', function(req,res,next){
-  res.sendFile(__dirname+'/public/index.html');
+app.use('*', function (req, res, next) {
+  res.sendFile(__dirname + '/public/index.html');
 });
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

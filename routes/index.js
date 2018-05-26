@@ -15,14 +15,15 @@ var DIR = './uploads/';
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, './uploads')
-  }
-})
+  },
+});
 
 var upload = multer({ storage: storage }).single('file');
 
 var thingSchema = new mongoose.Schema({
   title: String,
   desc: String,
+  date: {type:Date,default: Date.now()},
   course:{type: mongoose.Schema.Types.ObjectId, ref:'Subject'},
   content:mongoose.Schema.Types.Mixed
 });
@@ -54,21 +55,15 @@ router.use(function (req, res, next) {
   }
 })
 
-//moved to file.js
-
-//our file upload function.
-/*router.post('/',upload, function (req, res, next) {
-       console.log(req.body);
-       path = req.file.mimetype;
-       return res.send("Upload Completed for "+path);
- });*/
-
-router.post('/', function (req, res) {
+router.post('/', function (req, res,next) {
   upload(req, res, function (err) {
     if (err) {
-      // An error occurred when uploading
-      return res.send(err);
+      return res.json({status:500,message:"upload_error"});
     }
+    next();
+  })
+  },
+  function(req,res){
     console.log(req.body);
     var content={};
     content.type=req.body.type;
@@ -89,16 +84,17 @@ router.post('/', function (req, res) {
     });
 
     thing.save(function (err) {
-      if (err) return send(err);
-      return res.send("Upload Completed");
+      if (err){
+        return res.json({status:500,message:"error_saving_to_db",data:err.message});
+      } 
+      return res.json({status:200,message:"upload COmpleted"});
     });
-  })
-});
+  });
 
 
 router.get('/',function(req,res){
 
-  Thing.find().populate('course').select({'_id':0,'course._id':0}).exec(function(err,data){
+  Thing.find().populate('course').select({'_id':0,'course._id':0}).sort({'date':-1}).exec(function(err,data){
     if (err) return res.json({error:err});
     res.json({status:200,data:data});
   });
