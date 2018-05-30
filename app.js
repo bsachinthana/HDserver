@@ -13,14 +13,15 @@ var users = require('./routes/users');
 var utils = require('./routes/util');
 var files = require('./routes/files');
 // db connection
-// 'mongodb://localhost:27017/dbfileshare
+// mongodb://127.0.0.1:27017/dbHanthanaDrive
 // mongodb://sachi:sachi123@ds163918.mlab.com:63918/54fileshare
 
-mongoose.connect('mongodb://127.0.0.1:27017/dbHanthanaDrive', (err, db) => {
+mongoose.connect('mongodb://sachi:sachi123@ds163918.mlab.com:63918/54fileshare', (err, db) => {
   if (err) return console.log(err);
 });
 global.db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
 var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
