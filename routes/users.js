@@ -10,7 +10,7 @@ var namify = require('filenamify');
 
 var jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 var config = require('./config'); // get our config file
-
+/*
 var nodemailer = require('nodemailer'); //mailing middleware
 var transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -22,7 +22,21 @@ var transporter = nodemailer.createTransport({
     user: "hanthanadrive@gmail.com",
     pass: "hanthanadrive@2018"
   }
-});
+});*/
+
+var mailgun = require("mailgun-js");
+var api_key = '6a1929375e01f9725f97ca3fd9e2b55a-b6183ad4-648b8df6';
+var DOMAIN = 'hanthanadrive.com';
+var mailgun = require('mailgun-js')({apiKey: api_key, domain: DOMAIN});
+
+var data = {
+  from: 'Hanthanadrive Team <services@hanthanadrive.com>',
+  to: 'bsachinthana@gmail.com',
+  subject: 'Hello',
+  text: 'Testing some Mailgun awesomness!'
+};
+
+
 
 const tokenSchema = new mongoose.Schema({
   user_Id: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'User', unique: true },
@@ -145,6 +159,7 @@ router.post('/approve', function (req, res, next) {
           if (err) {
             return res.json({ 'status': 500, 'message': err.message });
           }
+          /*
           //req.headers.host
           var url = 'http://'+req.headers.host+'/user/confirmation/' + user._id + '/' + token.token;
           const mailOptions = {
@@ -168,6 +183,9 @@ router.post('/approve', function (req, res, next) {
                 return res.json({ 'status': 200, 'message': 'successful in changing system' });
               }
             });
+            });*/
+            mailgun.messages().send(data, function (error, body) {
+              console.log(body);
           });
           
         });
