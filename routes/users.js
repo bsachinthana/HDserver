@@ -29,12 +29,7 @@ var api_key = '6a1929375e01f9725f97ca3fd9e2b55a-b6183ad4-648b8df6';
 var DOMAIN = 'hanthanadrive.com';
 var mailgun = require('mailgun-js')({apiKey: api_key, domain: DOMAIN});
 
-var data = {
-  from: 'Hanthanadrive Team <services@hanthanadrive.com>',
-  to: 'bsachinthana@gmail.com',
-  subject: 'Hello',
-  text: 'Testing some Mailgun awesomness!'
-};
+
 
 
 
@@ -185,9 +180,13 @@ router.post('/approve', function (req, res, next) {
             });
 
             });*/
-            mailgun.messages().send(data, function (error, body) {
-              console.log(body);
-          });
+            var url = 'http://'+req.headers.host+'/user/confirmation/' + user._id + '/' + token.token;
+            var data = {
+              from: 'Hanthanadrive Team <services@hanthanadrive.com>',
+              to: user.email,
+              subject: user.name,
+              html: '<p>click on the link to activate your account <a href="' + url + '">' + url + '</a></p>'
+            };
 
             mailgun.messages().send(data, function (error, body) {
               console.log(body);
