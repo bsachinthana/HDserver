@@ -15,8 +15,8 @@ var nodemailer = require('nodemailer'); //mailing middleware
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'uopfileshare@gmail.com',
-    pass: 'uopfileshare'
+    user: 'hanthanadrive@gmail.com',
+    pass: 'hanthanadrive@2018'
   }
 });
 
@@ -144,7 +144,7 @@ router.post('/approve', function (req, res, next) {
           //req.headers.host
           var url = 'http://'+req.headers.host+'/user/confirmation/' + user._id + '/' + token.token;
           const mailOptions = {
-            from: 'uopfileshare@gmail.com', // sender address
+            from: 'hanthanadrive@gmail.com', // sender address
             to: user.email, // list of receivers
             subject: 'File Share Account Confirmation', // Subject line
             html: '<p>click on the link to activate your account <a href="' + url + '">' + url + '</a></p>'// plain text body
