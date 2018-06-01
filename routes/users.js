@@ -12,7 +12,7 @@ var jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 var config = require('./config'); // get our config file
 
 var nodemailer = require('nodemailer'); //mailing middleware
-var transporter = nodemailer.createTransport("SMTP",{
+var transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   secureConnection: false,
   port: 587,
