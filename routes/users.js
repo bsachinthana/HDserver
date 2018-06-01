@@ -160,7 +160,6 @@ router.post('/approve', function (req, res, next) {
             return res.json({ 'status': 500, 'message': err.message });
           }
           /*
-          //req.headers.host
           var url = 'http://'+req.headers.host+'/user/confirmation/' + user._id + '/' + token.token;
           const mailOptions = {
             from: 'hanthanadrive@gmail.com', // sender address
@@ -184,6 +183,7 @@ router.post('/approve', function (req, res, next) {
               }
             });
             });*/
+
             mailgun.messages().send(data, function (error, body) {
               console.log(body);
           });
