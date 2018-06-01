@@ -149,17 +149,23 @@ router.post('/approve', function (req, res, next) {
             subject: 'File Share Account Confirmation', // Subject line
             html: '<p>click on the link to activate your account <a href="' + url + '">' + url + '</a></p>'// plain text body
           };
-
-          transporter.sendMail(mailOptions, function (err, info) {
-            if (err) {
+          transporter.verify(function(err,success) {
+            if(err){
               console.log(err)
-              return resolve.json({ 'status': 501, 'message': 'error in sending mail' });
+              return res.json({ 'status': 501, 'message': 'error verifying' });
             }
-            else {
-              console.log(info);
-              return res.json({ 'status': 200, 'message': 'successful in changing system' });
-            }
+            transporter.sendMail(mailOptions, function (err, info) {
+              if (err) {
+                console.log(err)
+                return res.json({ 'status': 501, 'message': 'error in sending mail' });
+              }
+              else {
+                console.log(info);
+                return res.json({ 'status': 200, 'message': 'successful in changing system' });
+              }
+            });
           });
+          
         });
 
       });
