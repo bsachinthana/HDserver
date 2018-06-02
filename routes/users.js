@@ -29,10 +29,6 @@ var api_key = '6a1929375e01f9725f97ca3fd9e2b55a-b6183ad4-648b8df6';
 var DOMAIN = 'hanthanadrive.com';
 var mailgun = require('mailgun-js')({apiKey: api_key, domain: DOMAIN});
 
-
-
-
-
 const tokenSchema = new mongoose.Schema({
   user_Id: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'User', unique: true },
   token: { type: String, required: true },

@@ -12,6 +12,7 @@ var config = require('./config'); // get our config file
 var DIR = './uploads/';
 
 //gives full access
+
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, './uploads')
@@ -93,11 +94,38 @@ router.post('/', function (req, res,next) {
 
 
 router.get('/',function(req,res){
-
   Thing.find().populate('course').select({'_id':0,'course._id':0}).sort({'date':-1}).exec(function(err,data){
     if (err) return res.json({error:err});
     res.json({status:200,data:data});
-  });
-
+ });
 });
+router.get('/:subject',function(req,res){
+  console.log(req.params.subject);
+  Thing.aggregate([ 
+    { 
+      $lookup: 
+      { 
+        from: "subjects", 
+        localField: "course", 
+        foreignField: "_id", 
+        as: "course" 
+      }
+    },
+      { $match : 
+        { 
+          "course.subject" : req.params.subject
+        } 
+      },{
+        $project:{
+          _id:0,
+          course:{_id:0,}
+        }
+      }
+    ]).exec(function(err,data){
+    if (err) return res.json({error:err});
+    res.json({status:200,data:data});
+ });
+});
+
+
 module.exports = router;

@@ -17,4 +17,10 @@ router.get('/subjects', function (req, res) {
     });
   });
 
+  router.get('/departments', function (req, res) {
+    subject.distinct("subject", function (err, result) {
+      if (err) return send(err);
+      res.json(result);
+    });
+  });
 module.exports = router;
