@@ -180,12 +180,17 @@ router.post('/approve', function (req, res, next) {
             var data = {
               from: 'Hanthanadrive Team <services@hanthanadrive.com>',
               to: user.email,
-              subject: user.name,
-              html: '<p>click on the link to activate your account <a href="' + url + '">' + url + '</a></p>'
+              subject: "Hanthanadrive Account Confirmation",
+              html: '<p> Hi user.name,<br/> You have successfully registered at HanthanaDrive. Please click on the link to activate your account <a href="' + url + '">' + url + '</a></p>'
             };
 
             mailgun.messages().send(data, function (error, body) {
-              console.log(body);
+              if (err) {
+                console.log(err)
+                return res.json({ 'status': 500, 'message': 'error in sending mail' });
+              }
+              return res.json({ 'status': 200, 'message': 'successful in changing system' });
+
           });
           
         });
