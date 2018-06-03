@@ -110,6 +110,8 @@ router.get('/:subject',function(req,res){
         foreignField: "_id", 
         as: "course" 
       }
+    },{
+    	$unwind: "$course"
     },
       { $match : 
         { 
