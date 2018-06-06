@@ -156,7 +156,7 @@ router.post('/approve', function (req, res, next) {
               from: 'Hanthanadrive Team <services@hanthanadrive.com>',
               to: user.email,
               subject: "Hanthanadrive Account Confirmation",
-              html: '<p> Hi '+user.name+',<br/> You have successfully registered at HanthanaDrive. Please click on the link to activate your account <a href="' + url + '">' + url + '</a></p>'
+              html: '<html><body><p> Hi '+user.name+',<br/> You have successfully registered at HanthanaDrive. Please click on the link to activate your account <a href="' + url + '">' + url + '</a></p></body></html>'
             };
 
             mailgun.messages().send(data, function (error, body) {
