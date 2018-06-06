@@ -150,38 +150,13 @@ router.post('/approve', function (req, res, next) {
           if (err) {
             return res.json({ 'status': 500, 'message': err.message });
           }
-          /*
-          //req.headers.host
-          var url = 'http://'+req.headers.host+'/user/confirmation/' + user._id + '/' + token.token;
-          const mailOptions = {
-            from: 'hanthanadrive@gmail.com', // sender address
-            to: user.email, // list of receivers
-            subject: 'File Share Account Confirmation', // Subject line
-            html: '<p>click on the link to activate your account <a href="' + url + '">' + url + '</a></p>'// plain text body
-          };
-          transporter.verify(function(err,success) {
-            if(err){
-              console.log(err)
-              return res.json({ 'status': 501, 'message': 'error verifying' });
-            }
-            transporter.sendMail(mailOptions, function (err, info) {
-              if (err) {
-                console.log(err)
-                return res.json({ 'status': 501, 'message': 'error in sending mail' });
-              }
-              else {
-                console.log(info);
-                return res.json({ 'status': 200, 'message': 'successful in changing system' });
-              }
-            });
-
-            });*/
+          
             var url = 'http://'+req.headers.host+'/user/confirmation/' + user._id + '/' + token.token;
             var data = {
               from: 'Hanthanadrive Team <services@hanthanadrive.com>',
               to: user.email,
               subject: "Hanthanadrive Account Confirmation",
-              html: '<p> Hi user.name,<br/> You have successfully registered at HanthanaDrive. Please click on the link to activate your account <a href="' + url + '">' + url + '</a></p>'
+              html: '<p> Hi '+user.name+',<br/> You have successfully registered at HanthanaDrive. Please click on the link to activate your account <a href="' + url + '">' + url + '</a></p>'
             };
 
             mailgun.messages().send(data, function (error, body) {

@@ -122,6 +122,8 @@ router.get('/:subject',function(req,res){
           _id:0,
           course:{_id:0,}
         }
+      },{
+      	$sort:{date:-1}
       }
     ]).exec(function(err,data){
     if (err) return res.json({error:err});
