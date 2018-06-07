@@ -24,7 +24,7 @@ var upload = multer({ storage: storage }).single('file');
 var thingSchema = new mongoose.Schema({
   title: String,
   desc: String,
-  date: {type:Date,default: Date.now()},
+  date: {type:Date,default: Date.now},
   course:{type: mongoose.Schema.Types.ObjectId, ref:'Subject'},
   content:mongoose.Schema.Types.Mixed
 });
