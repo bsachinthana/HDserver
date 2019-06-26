@@ -15,8 +15,9 @@ var files = require('./routes/files');
 // db connection
 // mongodb://127.0.0.1:27017/dbHanthanaDrive
 // mongodb://sachi:sachi123@ds163918.mlab.com:63918/54fileshare
+//mongodb://dbAdmin:hanthanadrive%40fosuop@127.0.0.1:27017/dbHanthanaDrive
 
-mongoose.connect('mongodb://dbAdmin:hanthanadrive%40fosuop@127.0.0.1:27017/dbHanthanaDrive',{uri_decode_auth: true}, (err, db) => {
+mongoose.connect('mongodb://sachi:sachi123@ds163918.mlab.com:63918/54fileshare',{uri_decode_auth: true}, (err, db) => {
   if (err) return console.log(err);
 });
 global.db = mongoose.connection;

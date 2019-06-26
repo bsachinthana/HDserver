@@ -91,6 +91,7 @@ router.get('/',function(req,res){
     res.status(200).json({data:data});
  });
 });
+//find by subject
 router.get('/:subject',function(req,res){
   console.log(req.params.subject);
   Thing.aggregate([ 

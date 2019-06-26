@@ -195,7 +195,9 @@ router.post('/register', upload, function (req, res, next) {
   u.tpno = req.body.tpno;
   u.sno = req.body.sno
   u.email = req.body.email
-  u.idFileName = req.file.filename;
+  if(req.file){
+    u.idFileName = req.file.filename;
+  }
   var user = User(u);
   user.setPassword(req.body.password);
   console.log(user);
