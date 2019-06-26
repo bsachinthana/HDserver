@@ -4,6 +4,7 @@ var router = express.Router();
 var multer = require('multer');
 var namify = require('filenamify');
 var Subject = require('../models/subject.model');
+var Thing = require('../models/document.model');
 
 var jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 var config = require('./config'); // get our config file
@@ -20,15 +21,6 @@ var storage = multer.diskStorage({
 });
 
 var upload = multer({ storage: storage }).single('file');
-
-var thingSchema = new mongoose.Schema({
-  title: String,
-  desc: String,
-  date: {type:Date,default: Date.now},
-  course:{type: mongoose.Schema.Types.ObjectId, ref:'Subject'},
-  content:mongoose.Schema.Types.Mixed
-});
-var Thing = mongoose.model('Thing', thingSchema);
 
 //this middle ware applies to all the functions
 router.use(function (req, res, next) {

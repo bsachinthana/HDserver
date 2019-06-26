@@ -1,13 +1,13 @@
 [
 {
-subject" : "Computer Science2", 
+"subject" : "Computer Science2", 
     "code" : "CS304", 
-    "year" : NumberInt(2), 
+    "year" : 2, 
     "name" : "Project in Computer Science II-Individual Project Works"
 },
 {
-	subject" : "Computer Science3", 
+	"subject" : "Computer Science3", 
     "code" : "CS304", 
-    "year" : NumberInt(2), 
+    "year" :2, 
     "name" : "Project in Computer Science II-Individual Project Works"
 }]

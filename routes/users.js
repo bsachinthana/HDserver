@@ -10,19 +10,6 @@ var namify = require('filenamify');
 
 var jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 var config = require('./config'); // get our config file
-/*
-var nodemailer = require('nodemailer'); //mailing middleware
-var transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  secureConnection: false,
-  port: 587,
-  requiresAuth: true,
-  domains: ["gmail.com", "googlemail.com"],
-  auth: {
-    user: "hanthanadrive@gmail.com",
-    pass: "hanthanadrive@2018"
-  }
-});*/
 
 var mailgun = require("mailgun-js");
 var api_key = '6a1929375e01f9725f97ca3fd9e2b55a-b6183ad4-648b8df6';
@@ -64,11 +51,10 @@ const sendError = (err, res) => {
 
 function response(res, status, data, msg) {
   var response = {
-    "status": status,
     "data": data,
     "message": msg
   }
-  res.json(response);
+  res.status(status).json(response);
 };
 /* GET users listing. */
 router.post('/login', function (req, res, next) {
@@ -225,8 +211,8 @@ router.post('/register', upload,function (req, res, next) {
       response(res, 200, "", "SUCCESS");
     });
 });
-//login
 
+//login
 router.get('/pending', function (req, res, next) {
   User.find({ 'status': 'pending' }, 'name card sno email idFileName', function (err, profile) {
     if (err) return res.json({ 'status': '404', 'message': err });
@@ -243,8 +229,8 @@ router.get('/id', function (req, res, next) {
 });
 
 router.get('/validate',function (req, res, next) {
-  var token = req.headers.authorization;
-
+  var token = req.get('Authorization');;
+  console.log(token);
   // decode token
   if (token) {
     // verifies secret and checks exp
