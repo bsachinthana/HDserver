@@ -33,7 +33,7 @@ router.use(function (req, res, next) {
     // verifies secret and checks exp
     jwt.verify(token, config.secret, function (err, decoded) {
       if (err) {
-        return res.json({message:'invalid token'});
+        return res.status(400).json({message:'invalid token'});
       } else {
         // if everything is good, save to request for use in other routes
         req.decoded = decoded;
@@ -44,14 +44,14 @@ router.use(function (req, res, next) {
   } else {
     // if there is no token
     // return an error
-    return res.json({status:500,message:'no token'});
+    return res.status(400).json({message:'no token'});
   }
 })
 
 router.post('/', function (req, res,next) {
   upload(req, res, function (err) {
     if (err) {
-      return res.json({status:500,message:"upload_error"});
+      return res.status(500).json({message:"upload_error"});
     }
     next();
   })
@@ -78,9 +78,9 @@ router.post('/', function (req, res,next) {
 
     thing.save(function (err) {
       if (err){
-        return res.json({status:500,message:"error_saving_to_db",data:err.message});
+        return res.status(500).json({message:"error saving to db",data:err.message});
       } 
-      return res.json({status:200,message:"upload COmpleted"});
+      return res.status(200).json({message:"upload Completed"});
     });
   });
 
@@ -88,7 +88,7 @@ router.post('/', function (req, res,next) {
 router.get('/',function(req,res){
   Thing.find().populate('course').select({'_id':0,'course._id':0}).sort({'date':-1}).exec(function(err,data){
     if (err) return res.json({error:err});
-    res.json({status:200,data:data});
+    res.status(200).json({data:data});
  });
 });
 router.get('/:subject',function(req,res){
@@ -119,7 +119,7 @@ router.get('/:subject',function(req,res){
       }
     ]).exec(function(err,data){
     if (err) return res.json({error:err});
-    res.json({status:200,data:data});
+    res.status(200).json({data:data});
  });
 });
 

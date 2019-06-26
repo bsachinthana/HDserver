@@ -14,7 +14,7 @@ var config = require('./config'); // get our config file
 var mailgun = require("mailgun-js");
 var api_key = '6a1929375e01f9725f97ca3fd9e2b55a-b6183ad4-648b8df6';
 var DOMAIN = 'hanthanadrive.com';
-var mailgun = require('mailgun-js')({apiKey: api_key, domain: DOMAIN});
+var mailgun = require('mailgun-js')({ apiKey: api_key, domain: DOMAIN });
 
 const tokenSchema = new mongoose.Schema({
   user_Id: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'User', unique: true },
@@ -67,9 +67,9 @@ router.post('/login', function (req, res, next) {
     if (!profile) {
       response(res, 400, "", 'User Doesn\'t Exist');
 
-    }else if(profile.status!='active'){
+    } else if (profile.status != 'active') {
       response(res, 400, "", 'USER_NOT_ACTIVE');
-    }else if (!profile.validPassword(pw)) {
+    } else if (!profile.validPassword(pw)) {
       response(res, 400, "", 'Incorrect Password');
 
     } else {
@@ -120,7 +120,7 @@ router.post('/approve', function (req, res, next) {
   var id = req.body.id;
   User.findOne({ _id: id, sno: sno }, function (err, user) {
     if (err) {
-      return res.json({ 'status': 500, 'message': 'INCORRECT_POST_DATA', 'data': err.message });
+      return res.status(500).json({ 'message': 'INCORRECT_POST_DATA', 'data': err.message });
     }
     if (user) {
       var token = new Token({ user_Id: mongoose.Types.ObjectId(user._id), token: crypto.randomBytes(16).toString('hex') });
@@ -134,38 +134,33 @@ router.post('/approve', function (req, res, next) {
         //only if token function is done
         User.findOneAndUpdate({ sno: sno }, { $set: { status: 'approved' } }, function (err, status) {
           if (err) {
-            return res.json({ 'status': 500, 'message': err.message });
+            return res.status(500).json({ 'message': err.message });
           }
-          
-            var url = 'http://'+req.headers.host+'/user/confirmation/' + user._id + '/' + token.token;
-            var data = {
-              from: 'Hanthanadrive Team <services@hanthanadrive.com>',
-              to: user.email,
-              subject: "Hanthanadrive Account Confirmation",
-              html: '<html><body><p> Hi '+user.name+',<br/> You have successfully registered at HanthanaDrive. Please click on the link to activate your account <a href="' + url + '">' + url + '</a></p></body></html>'
-            };
 
-            mailgun.messages().send(data, function (error, body) {
-              if (err) {
-                console.log(err)
-                return res.json({ 'status': 500, 'message': 'error in sending mail' });
-              }
-              return res.json({ 'status': 200, 'message': 'successful in changing system' });
+          var url = 'http://' + req.headers.host + '/user/confirmation/' + user._id + '/' + token.token;
+          var data = {
+            from: 'Hanthanadrive Team <services@hanthanadrive.com>',
+            to: user.email,
+            subject: "Hanthanadrive Account Confirmation",
+            html: '<html><body><p> Hi ' + user.name + ',<br/> You have successfully registered at HanthanaDrive. Please click on the link to activate your account <a href="' + url + '">' + url + '</a></p></body></html>'
+          };
+
+          mailgun.messages().send(data, function (error, body) {
+            if (err) {
+              console.log(err)
+              return res.json({ 'status': 500, 'message': 'error in sending mail' });
+            }
+            return res.json({ 'status': 200, 'message': 'successful in changing system' });
 
           });
-          
+
         });
 
       });
     }
-    //&&&&&&&&&&&&&&&&&&&&&& HANDLE ERROR &&&&&&&&&&&&&&&&&&&&&&&&&&&//
   });
 
 
-});
-
-router.get('/', function (req, res, next) {
-  res.send('respond with a resource');
 });
 
 //confirmation
@@ -173,43 +168,41 @@ router.post('/confirmation', function (req, res, next) {
   if (req.body.id && req.body.token) {
     Token.findOne({ user_Id: mongoose.Types.ObjectId(req.body.id), token: req.body.token }).populate('user_Id').exec(function (err, token) {
       if (err) {
-        return res.json({ 'status': 500, 'message': err.message });
+        return res.status(500).json({'message': err.message });
       }
       if (token) {
         User.findOneAndUpdate({ sno: token.user_Id.sno }, { $set: { status: 'active' } }, function (err, status) {
           if (err) {
-            res.json({ 'status': 500, 'message': err.message });
+            res.json.status(500).json({'message': err.message });
           }
           Token.findOneAndRemove({ user_Id: mongoose.Types.ObjectId(req.body.id), token: req.body.token }, function (err, doc) {
             if (err) {
-              return res.json({ 'status': 500, 'message': err.message });
+              return res.status(500).json({'message': err.message });
             }
-            res.json({ 'status': 200, 'message': 'accout_Active' });
+            res.status(200).json({ 'message': 'accout_Active' });
           })
-
         });
-
       }
     });
   }
-
 });
+
 //new user
-router.post('/register', upload,function (req, res, next) {
-    var u = {};
-    u.name = req.body.name;
-    u.card = req.body.card;
-    u.tpno = req.body.tpno;
-    u.sno = req.body.sno
-    u.email = req.body.email
-    u.idFileName = req.file.filename;
-    var user = User(u);
-    user.setPassword(req.body.password);
-    console.log(user);
-    user.save(function (err) {
-      if (err) return sendError(err, res);
-      response(res, 200, "", "SUCCESS");
-    });
+router.post('/register', upload, function (req, res, next) {
+  var u = {};
+  u.name = req.body.name;
+  u.card = req.body.card;
+  u.tpno = req.body.tpno;
+  u.sno = req.body.sno
+  u.email = req.body.email
+  u.idFileName = req.file.filename;
+  var user = User(u);
+  user.setPassword(req.body.password);
+  console.log(user);
+  user.save(function (err) {
+    if (err) return sendError(err, res);
+    response(res, 200, "", "SUCCESS");
+  });
 });
 
 //login
@@ -228,7 +221,7 @@ router.get('/id', function (req, res, next) {
   res.sendFile(x);
 });
 
-router.get('/validate',function (req, res, next) {
+router.get('/validate', function (req, res, next) {
   var token = req.get('Authorization');;
   console.log(token);
   // decode token
@@ -238,7 +231,7 @@ router.get('/validate',function (req, res, next) {
       if (err) {
         return res.json({ message: 'INVALID_TOKEN' });
       } else {
-        return res.json({ message: decoded.accType});
+        return res.json({ message: decoded.accType });
       }
     });
 
