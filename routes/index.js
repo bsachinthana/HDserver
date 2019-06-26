@@ -22,7 +22,8 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage }).single('file');
 
-//this middle ware applies to all the functions
+/*
+//Checking auth - this middle ware applies to all the functions
 router.use(function (req, res, next) {
 
   // check header or url parameters or post parameters for token
@@ -47,7 +48,7 @@ router.use(function (req, res, next) {
     return res.status(400).json({message:'no token'});
   }
 })
-
+*/
 router.post('/', function (req, res,next) {
   upload(req, res, function (err) {
     if (err) {
@@ -123,5 +124,41 @@ router.get('/:subject',function(req,res){
  });
 });
 
+//return uploads for courses a user has selected
+//get courses as a comma seperated list in ajax
+
+router.get('/enrolled',function(req,res){
+  var coursesCsl = req.query['c'];
+  var courses = coursesCsl.split(',');
+  console.log(coursesCsl);
+  Thing.aggregate([ 
+    { 
+      $lookup: 
+      { 
+        from: "subjects", 
+        localField: "course", 
+        foreignField: "_id", 
+        as: "course" 
+      }
+    },{
+    	$unwind: "$course"
+    },
+      { $elemMatch : 
+        { 
+          "course.code" : courses
+        } 
+      },{
+        $project:{
+          _id:0,
+          course:{_id:0,}
+        }
+      },{
+      	$sort:{date:-1}
+      }
+    ]).exec(function(err,data){
+    if (err) return res.status(500).json({error:err});
+    res.status(200).json({data:data});
+ });
+});
 
 module.exports = router;
