@@ -17,6 +17,24 @@ router.get('/subjects', function (req, res) {
     });
   });
 
+  router.get('/allSubjects', function (req, res) {
+    subject.aggregate([
+      {
+        $group: {
+          _id: '$year',
+          courses: { $push: { code: '$code', name: '$name', id: '$_id' } }
+        },
+        $group: {
+          _id: '$_id.code',
+          courses: { $push: { code: '$code', name: '$name', id: '$_id' } }
+        }
+      }
+    ], function (err, result) {
+      if (err) return send(err);
+      res.json(result);
+    });
+  });
+
   router.get('/departments', function (req, res) {
     subject.distinct("subject", function (err, result) {
       if (err) return send(err);

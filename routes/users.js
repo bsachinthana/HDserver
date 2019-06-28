@@ -60,17 +60,16 @@ function response(res, status, data, msg) {
 router.post('/login', function (req, res, next) {
   var un = req.body.un;
   var pw = req.body.pw;
-  console.log(un);
   User.findOne({ 'sno': un }, function (err, profile) {
-    if (err) return res.send(err);
+    if (err) return res.status(500).json(err);
     console.log(profile);
     if (!profile) {
-      response(res, 400, "", 'User Doesn\'t Exist');
-
+      res.status(400).send('user doesn\'t exist');
+     // response(res, 400, "", 'User Doesn\'t Exist');
     } else if (profile.status != 'active') {
-      response(res, 400, "", 'USER_NOT_ACTIVE');
+      res.status(400).send('Account not active. Please check your inbox or spam for activation link');
     } else if (!profile.validPassword(pw)) {
-      response(res, 400, "", 'Incorrect Password');
+      res.status(400).send('Incorrect Password');
 
     } else {
       // if user is found and password is right
@@ -89,7 +88,6 @@ router.post('/login', function (req, res, next) {
       response(res, 200, { profile: payload, token: token }, '');
     }
   });
-
 });
 
 router.post('/approve', function (req, res, next) {
@@ -159,8 +157,6 @@ router.post('/approve', function (req, res, next) {
       });
     }
   });
-
-
 });
 
 //confirmation

@@ -92,6 +92,45 @@ router.get('/',function(req,res){
     res.status(200).json({data:data});
  });
 });
+
+//return uploads for courses a user has selected
+//get courses as a comma seperated list in ajax
+
+router.get('/enrolled',function(req,res){
+  var coursesCsl = req.query['c'];
+  var courses = coursesCsl.split(',');
+  console.log(courses);
+  Thing.aggregate([ 
+    { 
+      $lookup: 
+      { 
+        from: "subjects", 
+        localField: "course", 
+        foreignField: "_id", 
+        as: "course" 
+      }
+    },{
+    	$unwind: "$course"
+    },
+      { $match : 
+        { 
+          "course.code" : {$in:courses}
+        } 
+      },{
+        $project:{
+          _id:0,
+          course:{_id:0,}
+        }
+      },{
+      	$sort:{date:-1}
+      }
+    ]).exec(function(err,data){
+    if (err) return res.status(500).json({error:err});
+    res.status(200).json({data:data});
+ });
+});
+
+
 //find by subject
 router.get('/:subject',function(req,res){
   console.log(req.params.subject);
@@ -125,41 +164,5 @@ router.get('/:subject',function(req,res){
  });
 });
 
-//return uploads for courses a user has selected
-//get courses as a comma seperated list in ajax
-
-router.get('/enrolled',function(req,res){
-  var coursesCsl = req.query['c'];
-  var courses = coursesCsl.split(',');
-  console.log(coursesCsl);
-  Thing.aggregate([ 
-    { 
-      $lookup: 
-      { 
-        from: "subjects", 
-        localField: "course", 
-        foreignField: "_id", 
-        as: "course" 
-      }
-    },{
-    	$unwind: "$course"
-    },
-      { $elemMatch : 
-        { 
-          "course.code" : courses
-        } 
-      },{
-        $project:{
-          _id:0,
-          course:{_id:0,}
-        }
-      },{
-      	$sort:{date:-1}
-      }
-    ]).exec(function(err,data){
-    if (err) return res.status(500).json({error:err});
-    res.status(200).json({data:data});
- });
-});
 
 module.exports = router;
