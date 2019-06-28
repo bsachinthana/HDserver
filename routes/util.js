@@ -4,41 +4,53 @@ var router = express.Router();
 var subject = require('../models/subject.model');
 
 router.get('/subjects', function (req, res) {
-    subject.aggregate([
-      {
-        $group: {
-          _id: '$subject',
-          courses: { $push: { code: '$code', name: '$name', id: '$_id' } }
-        }
+  subject.aggregate([
+    {
+      $group: {
+        _id: '$subject',
+        courses: { $push: { code: '$code', name: '$name', id: '$_id' } }
       }
-    ], function (err, result) {
-      if (err) return send(err);
-      res.json(result);
-    });
+    }
+  ], function (err, result) {
+    if (err) return send(err);
+    res.json(result);
   });
+});
 
-  router.get('/allSubjects', function (req, res) {
-    subject.aggregate([
-      {
-        $group: {
-          _id: '$year',
-          courses: { $push: { code: '$code', name: '$name', id: '$_id' } }
+router.get('/allSubjects', function (req, res) {
+  subject.aggregate([
+    {
+      $group: {
+        _id: {
+          year: '$year',
+          subject: '$subject'
         },
-        $group: {
-          _id: '$_id.code',
-          courses: { $push: { code: '$code', name: '$name', id: '$_id' } }
-        }
+       courses: {
+          $push: {
+              code:'$code',
+              name: '$name'
+          }
       }
-    ], function (err, result) {
-      if (err) return send(err);
-      res.json(result);
-    });
+    }},
+    {$group:{
+    	 _id: '$_id.year',
+       subjects: {
+       $push:{
+         name:'$_id.subject',
+         courses:'$courses'
+         }
+       }
+         }
+    } ], function (err, result) {
+    if (err) return send(err);
+    res.json(result);
   });
+});
 
-  router.get('/departments', function (req, res) {
-    subject.distinct("subject", function (err, result) {
-      if (err) return send(err);
-      res.json(result);
-    });
+router.get('/departments', function (req, res) {
+  subject.distinct("subject", function (err, result) {
+    if (err) return send(err);
+    res.json(result);
   });
+});
 module.exports = router;
