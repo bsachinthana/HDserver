@@ -243,4 +243,33 @@ router.get('/validate', function (req, res, next) {
     return res.json({ status: 500, message: 'NO_TOKEN' });
   }
 });
+
+router.get('/profile',function(req,res,next){
+  
+  // check header or url parameters or post parameters for token
+  var token = req.headers.authorization;
+
+  // decode token
+  if (token) {
+    // verifies secret and checks exp
+    jwt.verify(token, config.secret, function (err, decoded) {
+      if (err) {
+        return res.status(400).json({message:'invalid token'});
+      } else {
+        // if everything is good, get full profile
+        User.findOne({'sno':decoded.sno},{password:0,status:0,salt:0,uploads:0},((err,prof) => {
+          if(err){
+              res.status(500).json(err);
+          }
+          console.log(decoded.sno);
+          res.status(200).json(prof);
+        }));
+      }});
+
+  } else {
+    // if there is no token
+    // return an error
+    return res.status(400).json({message:'no token'});
+  }
+})
 module.exports = router;
