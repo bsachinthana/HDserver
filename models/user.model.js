@@ -10,7 +10,7 @@ var userSchema = new Schema({
   sno: {type:String, unique:true, trim:true, lowercase:true},
   card: String,
   email: String,
-  tpno: Number,
+  tpno: String,
   password: String,
   salt:String,
   createdAt: Date,

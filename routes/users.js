@@ -44,9 +44,7 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage }).single('image');
 
 const sendError = (err, res) => {
-  response.status = 501;
-  response.message = typeof err == 'object' ? err.message : err;
-  res.status(501).json(response);
+  res.status(500).json(err);
 };
 
 function response(res, status, data, msg) {
@@ -194,7 +192,7 @@ router.post('/register', upload, function (req, res, next) {
   if(req.file){
     u.idFileName = req.file.filename;
   }
-  var user = User(u);
+  var user = new User(u);
   user.setPassword(req.body.password);
   console.log(user);
   user.save(function (err) {

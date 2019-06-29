@@ -49,8 +49,8 @@ router.get('/allSubjects', function (req, res) {
 
 router.get('/departments', function (req, res) {
   subject.distinct("subject", function (err, result) {
-    if (err) return send(err);
-    res.json(result);
+    if (err) return res.status(500).send(err);
+    res.status(200).json(result);
   });
 });
 module.exports = router;
